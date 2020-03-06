@@ -17,7 +17,6 @@
 OE_USER="odoo"
 OE_HOME="/opt/$OE_USER"
 OE_HOME_EXT="/$OE_USER/${OE_USER}-server"
-<<<<<<< HEAD
 #The default port where this Odoo instance will run under (provided you use the command -c in the terminal)
 #Set to true if you want to install it, false if you don't need it or have it already installed.
 INSTALL_WKHTMLTOPDF="False"
@@ -27,7 +26,6 @@ OE_PORT="8010"
 #IMPORTANT! This script contains extra libraries that are specifically needed for Odoo 11.0
 OE_VERSION="12.0"
 # Set this to True if you want to install Odoo 11 Enterprise!
-=======
 # The default port where this Odoo instance will run under (provided you use the command -c in the terminal)
 # Set to true if you want to install it, false if you don't need it or have it already installed.
 INSTALL_WKHTMLTOPDF="False"
@@ -37,7 +35,6 @@ OE_PORT="8069"
 # IMPORTANT! This script contains extra libraries that are specifically needed for Odoo 12.0
 OE_VERSION="12.0"
 # Set this to True if you want to install the Odoo enterprise version!
->>>>>>> dca6a5c504317a1fd70a57ddf4dc95a10a3d40f1
 IS_ENTERPRISE="False"
 # set the superadmin password
 OE_SUPERADMIN="admin"
@@ -77,7 +74,6 @@ sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 echo -e "\n--- Installing Python 3 + pip3 --"
 sudo apt-get install git python3 python3-pip build-essential wget python3-dev python3-venv python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less libpng12-0 gdebi -y
 
-<<<<<<< HEAD
 echo -e "\n---- Install tool packages ----"
 sudo apt-get install wget git bzr python-pip gdebi-core -y
 
@@ -93,10 +89,8 @@ echo -e "\n--- Install other required packages"
 sudo apt-get install node-clean-css -y
 sudo apt-get install node-less -y
 sudo apt-get install python-gevent -y
-=======
 echo -e "\n---- Install python packages/requirements ----"
 sudo pip3 install -r https://github.com/odoo/odoo/raw/${OE_VERSION}/requirements.txt
->>>>>>> dca6a5c504317a1fd70a57ddf4dc95a10a3d40f1
 
 #--------------------------------------------------
 # Install Wkhtmltopdf if needed
